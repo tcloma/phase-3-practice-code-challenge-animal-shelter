@@ -20,7 +20,7 @@ class Adopter < ActiveRecord::Base
     self.pets.each do |pet|
       species << pet.species
     end
-    species.tally.max_by {|key,value| value}
+    species.tally.max_by {|key,value| value}[0]
   end
 
 end
